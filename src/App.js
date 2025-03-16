@@ -23,9 +23,10 @@ function App() {
     if (keyword) {
       setFilteredPosts(
         posts.filter((post) =>
-          post.title.toLowerCase().includes(keyword.toLowerCase())
+          !post.title.toLowerCase().includes(keyword.toLowerCase()) // Add "!" to exclude posts with the keyword
         )
       );
+      
     } else {
       setFilteredPosts(posts);
     }
